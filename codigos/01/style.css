@@ -10,3 +10,8 @@ body {
     background-color: lightblue;
     font: normal normal 2em Arial;
 }
+
+h1 {
+    padding: 20px;
+    text-align: center;
+}

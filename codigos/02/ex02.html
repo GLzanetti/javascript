@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 de JavaScript</title>
+    <style>
+        *{
+            margin: 0px;
+            border: 0px;
+            padding: 0px;
+        }
+
+        body{
+            background-color: lightblue;
+            font: normal normal 2em Arial;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+
+    <script>
+       var nome = window.prompt('Qual o seu nome?');
+       window.alert('Prazer em te conhecer, ' + nome); //Concatenação
+       var idade = window.prompt('Qual a sua idade? ')
+       window.alert(nome + 'voce tem ' + idade + ' anos')
+    </script>
+</body>
+</html>

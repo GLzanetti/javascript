@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 de JavaScript</title>
+    <style>
+        *{
+            margin: 0px;
+            border: 0px;
+            padding: 0px;
+        }
+
+        body{
+            background-color: lightblue;
+            font: normal normal 2em Arial;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+
+    <script>
+       var n1 = Number (window.prompt('Digite um numero'));  // por padrao vira uma string
+       var n2 = Number (window.prompt('Digite outro numero'));
+       var s = n1 + n2
+
+       window.alert(`A soma entre os numeros é = ${s}`);
+       // (number + number) = soma
+       // (string + string) = concatenação
+       // podemos transformar uma string em number com Number.parseInt (para inteiro) Number.parseFloat (para Real) e Number (para que o JS decida)
+       // podemos transformar um number para uma string com String(n) ou n.toString, sendo (n) para representar o que queira transformar
+    </script>
+</body>
+</html>
