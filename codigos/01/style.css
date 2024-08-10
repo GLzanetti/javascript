@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+body {
+    background-color: lightblue;
+    font: normal normal 2em Arial;
+}
