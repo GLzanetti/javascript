@@ -11,4 +11,5 @@ for(let pos in num){
     console.log(`${pos} = ${num[pos]}`)
 }
 
-console.log(num.indexOf(7)) //quando for procurar por um número que não existe no vetor o valor de output = -1
+console.log(num.indexOf(7)) //quando for procurar por um número que não existe no vetor o valor de output = -1 
+
