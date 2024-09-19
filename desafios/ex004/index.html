@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 4 de JS</title>
+</head>
+<body>
+    <h1>Troco</h1>
+    <input type="button" value="Troco" id="botao">
+
+    <script>
+        let botao = document.querySelector('#botao')
+        botao.addEventListener('click',troco)
+
+        function troco(){
+            let produto = prompt("Qual produto voce comprou?")
+            let preco = Number(prompt(`Quanto custou ${produto}?`))
+            let valor = Number(prompt(`Quanto que voce deu para pagar ${produto}`))
+
+            if(valor - preco <= 0){
+                alert(`Voce comprou ${produto}, de valor ${preco} e pagou com ${valor}, logo voce nao possui troco para receber ou ainda falta dinheiro`)
+            } else {
+                alert(`Voce comprou ${produto}, de valor ${preco} e pagou com ${valor}, logo seu troco é ${valor - preco}`)
+            }
+        }
+
+    </script>
+</body>
+</html>

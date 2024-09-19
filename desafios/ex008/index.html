@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 8 de JS</title>
+</head>
+<body>
+    <h1>Calcular desconto</h1>
+    <input type="button" value="Desconto de 10%" id="botao">
+    <div id="resposta">Clique no botão para ganhar 10% de desconto</div>
+
+    <script>
+        let botao = document.querySelector('#botao')
+        botao.addEventListener('click', desconto)
+
+        function desconto(){
+            let produto = prompt("Qual o produto que está comprando?")
+            let valor = prompt(`Qual o valor de ${produto}?`)
+            let resposta = document.getElementById('resposta')
+            let desconto = valor * 0.1
+
+            resposta.innerHTML = `<h1>Calculando desconto de 10% para ${produto}</h1>`
+            resposta.innerHTML += `<p>O preço original é R$${valor}</p>`
+            resposta.innerHTML += `<p>Voce acaba de ganhar 10% de desconto ${desconto}</p>`
+            resposta.innerHTML += `<p>O preço final é de ${valor - desconto} </p>`
+        }
+    </script>
+</body>
+</html>

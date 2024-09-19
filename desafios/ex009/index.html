@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 9 de JS</title>
+</head>
+<body>
+    <h1>Reajuste de Salário</h1>
+    <input type="button" value="Reajustar" onclick="reajustar()">
+    <div id="resposta"></div>
+
+    <script>
+
+        function formatarNumero(salario){
+            return salario.toFixed(2).replace('.',',')
+        }
+
+        function reajustar(){
+            let funcionario = prompt("Qual o nome do funcionário?")
+            let salario = Number(prompt(`Qual o salário atual de ${funcionario}?`))
+            let reajuste = prompt(`Em quanto que será reajustado?`)
+            let aumento = salario*(reajuste/100)
+            let resposta = document.getElementById('resposta')
+
+            resposta.innerHTML = `<h1>O funcionário ${funcionario} recebeu um aumento</h1>`
+            resposta.innerHTML += `<p>O salário atual é R$${formatarNumero(salario)}</p>`
+            resposta.innerHTML += `<p>Com um aumento de ${reajuste}, o salário irá aumentar em ${formatarNumero(aumento)}</p>`
+            resposta.innerHTML += `<p>${funcionario} irá receber ${formatarNumero(salario + aumento)}</p>`
+        }
+    </script>
+</body>
+</html>

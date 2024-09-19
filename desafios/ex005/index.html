@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 5 de JS</title>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" id="botao">
+    <div id="resposta"></div>
+
+    <script>
+        let botao = document.querySelector('#botao')
+        botao.addEventListener('click', converter)
+
+        function formatarnumero(medida){
+            return medida.toFixed(3).replace('.', ',')
+        }
+
+        function converter(){
+            let resposta = document.getElementById('resposta')
+            let medida = Number(prompt("Digite um valor (em metros)."))
+          
+            
+            resposta.innerHTML = `<h1>A distância de ${formatarnumero(medida)} metros, corresponde a...</h1>`
+            resposta.innerHTML += `<p>${formatarnumero(medida/1000)} quilometros (Km)</p>`
+            resposta.innerHTML += `<p>${formatarnumero(medida/100)} hectômetros (Hm)</p>`
+            resposta.innerHTML += `<p>${formatarnumero(medida/10)} decâmetros (Dam)</p>`
+            resposta.innerHTML += `<p>${formatarnumero(medida*10)} decímetros (dm)</p>`
+            resposta.innerHTML += `<p>${formatarnumero(medida*100)} centímetros (cm)</p>`
+            resposta.innerHTML += `<p>${formatarnumero(medida*1000)} milímetros (mm)</p>`
+        }
+    </script>
+</body>
+</html>

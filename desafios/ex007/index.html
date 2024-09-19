@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 7 de JS</title>
+</head>
+<body>
+    <h1>Conversor R$ para US$</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <div id="resposta">Clique no botao acima para iniciar</div>
+
+    <script>
+        var dolar = prompt("Qual a cotacao do dolar hoje.")
+
+        function formatarNumero(valor){
+            return valor.toFixed(2)
+        }
+
+        function converter(){
+            let valor = prompt("Quantos R$ voce ira usar?")
+            let resposta = document.getElementById('resposta')
+
+            resposta.innerHTML = `<h1>Com R$${valor} e com o valor do US$${dolar}, voce poderá comprar US$${formatarNumero(valor/dolar)}</h1>`
+        }
+    </script>
+</body>
+</html>

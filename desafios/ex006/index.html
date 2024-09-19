@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 6 de JS</title>
+</head>
+<body>
+    <h1>Conversor de Temperatura</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <div id="resposta"></div>
+
+    <script>
+        function formatarNumero(temperatura){
+            return temperatura.toFixed(2).replace('.',',')
+        }
+
+        function converter(){
+            let temperatura = Number(prompt("Digite um temperatura em °C (celsius)"))
+            let resposta = document.getElementById('resposta')
+
+            resposta.innerHTML = `<h1>A temperatura de ${formatarNumero(temperatura)}°C, corresponde a...</h1>`
+            resposta.innerHTML += `<p>${formatarNumero(temperatura + 273.15)}°K (Kelvin)</p>`
+            resposta.innerHTML += `<p>${formatarNumero((temperatura*(9/5))+32)}°F (Fahrenheit)</p>`
+
+        }
+    </script>
+
+</body>
+</html>
