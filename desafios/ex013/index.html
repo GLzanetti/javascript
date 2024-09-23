@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 13 de JS</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .reprovado{
+            background-color: rgba(255, 0, 0, 0.467);
+            color: red;
+        }
+        .recuperacao{
+            background-color: rgba(255, 255, 0, 0.531);
+            color: rgb(131, 131, 5);
+        }
+        .aprovado{
+            background-color: rgba(0, 128, 0, 0.488);
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resposta"></div>
+
+    <script>
+        function formatarNumero(x){
+            return x.toFixed(2).replace('.',',')
+        }
+
+        function verificar(){ 
+            let nome = prompt("Qual o nome do aluno?")
+            let n1 = Number(prompt(`Qual a nota de lição de ${nome}?`))
+            let n2 = Number(prompt(`Qual a nota da prova mensal de ${nome}?`))
+            let n3 = Number(prompt(`Qual a nota da prova bimestral de ${nome}?`))
+            let media = (n1+n2+n3)/3
+            let resposta = document.getElementById('resposta')
+
+            resposta.innerHTML = `<h1>O/A aluno/a ${nome} com suas notas: trabalho=${n1}, prova mensal=${n2} e prova bimestral=${n3}</h1>`
+            if(media<=3){
+                resposta.innerHTML += `<h1>A média de ${nome} é ${formatarNumero(media)}, logo o aluno está <span class="reprovado"> REPROVADO</span></h1>`
+            } else if(media>3 && media <=5){
+                resposta.innerHTML += `<h1>A média de ${nome} é ${formatarNumero(media)}, logo o aluno está de <span class="recuperacao"> RECUPERAÇÃO</span></h1>`
+            } else {
+                resposta.innerHTML += `<h1>A média de ${nome} é ${formatarNumero(media)}, logo o aluno está <span class="aprovado"> APROVADO</span></h1>`
+            }
+
+        }
+    </script>
+</body>
+</html>

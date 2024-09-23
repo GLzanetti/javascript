@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 12 de JS</title>
+</head>
+<body>
+    <h1>Mudança de Preço</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resposta">Veja como foi a mudança de preço</div>
+
+    <script>
+        function formatarNumero(x){
+            return x.toFixed(2).replace('.',',')
+        }
+
+        function verificar(){
+            let precoant = prompt("Qual éra o valor anterior do produto?")
+            let precoatu = prompt("Qual o valor atual de produto?")
+            let resposta = document.getElementById('resposta')
+
+            resposta.innerHTML = `<h1>Analisando os valores informados</h1>`
+            if(precoant<precoatu){
+                resposta.innerHTML += `<p>O produto custava ${precoant} agora custa ${precoatu}</p>`
+                resposta.innerHTML += `<p>Hoje o valor está mais caro</p>`
+                resposta.innerHTML += `<p>O preço aumentou R$${precoatu - precoant} em relação ao preço anterior </p>`
+                resposta.innerHTML += `<p>Uma variação de ${formatarNumero(((precoatu - precoant)/precoant)*100)} para cima.</p>`
+            } else{
+                resposta.innerHTML += `<p>O produto custava ${precoant} agora custa ${precoatu}</p>`
+                resposta.innerHTML += `<p>Hoje o valor está mais barato</p>`
+                resposta.innerHTML += `<p>O preço diminuiu R$${precoant - precoatu} em relação ao preço anterior</p>`
+                resposta.innerHTML += `<p>Uma variação de %${formatarNumero(((precoant - precoatu)/precoatu)*100)} para baixo.</p>`
+            }
+            
+        }
+    </script>
+</body>
+</html>

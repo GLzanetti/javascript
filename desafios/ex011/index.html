@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 11 de JS</title>
+    <style>
+        .bissexto{
+            background-color: rgba(0, 128, 0, 0.46);
+            color: green;
+        }
+        .naobissexto{
+            background-color: rgba(255, 0, 0, 0.469);
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resposta">Informe o ano para saber se ele é ou não bissexto</div>
+
+    <script>
+        function verificar(){
+            let valor = prompt("Qual ano você deseja saber?")
+            let resposta = document.getElementById('resposta')
+            if(valor%4 == 0 && valor%100 !== 0 || valor%400 == 0){
+                resposta.innerHTML = `<h1>O ano ${valor} <span class="bissexto">é bissexto</span>.</h1>`
+            } else {
+                resposta.innerHTML = `<h1>O ano ${valor} <span class="naobissexto">não é bissexto</span>.</h1>`
+            }
+        }
+    </script>
+</body>
+</html>
